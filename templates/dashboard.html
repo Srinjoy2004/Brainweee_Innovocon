@@ -299,10 +299,10 @@
     </div>
 
     <script>
-        // Function to upload image and get tumor prediction
         function uploadImage() {
             let fileInput = document.getElementById("imageInput");
             let file = fileInput.files[0];
+            let tumorResult = document.getElementById("tumorResult");
     
             if (!file) {
                 alert("Please select an image!");
@@ -310,25 +310,42 @@
             }
     
             let formData = new FormData();
-            formData.append("image", file);
+            formData.append("image", file);  // ✅ Match the Flask API's expected key
     
-            fetch("http://127.0.0.1:5000/predict", { // ✅ Correct Flask API URL
+            // Show processing message
+            tumorResult.innerText = "Processing...";
+    
+            fetch("http://127.0.0.1:5000/predict", { 
                 method: "POST",
                 body: formData
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Server responded with status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
-                console.log("Tumor Prediction:", data.tumor); // ✅ Show result on console
-                document.getElementById("tumorResult").innerText = `Tumor: ${data.tumor}`; // ✅ Update UI
-                fileInput.value = ''; // ✅ Reset input after successful upload
+                if (data.error) {
+                    console.error("Error:", data.error);
+                    alert("Prediction failed: " + data.error);
+                    tumorResult.innerText = "Error: " + data.error;
+                } else {
+                    console.log("Tumor Prediction:", data.tumor_type);
+                    tumorResult.innerText = `Tumor: ${data.tumor_type} (Confidence: ${data.confidence})`;
+                }
             })
             .catch(error => {
                 console.error("Error:", error);
                 alert("Error occurred while processing the image. Please try again.");
-                fileInput.value = ''; // ✅ Reset input on error
+                tumorResult.innerText = "Error: Unable to process the image.";
+            })
+            .finally(() => {
+                fileInput.value = '';  // ✅ Reset input after processing
             });
         }
     </script>
+    
     
 
         // Function to open the modal

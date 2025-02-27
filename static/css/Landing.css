@@ -1,0 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.section-animate,
+.text-animate {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
