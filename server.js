@@ -144,6 +144,39 @@ app.post("/predict", upload.single("image"), async (req, res) => {
     fs.unlinkSync(req.file.path);
   }
 });
+
+
+// API Endpoint to Add a Patient
+app.post("/add-patient", (req, res) => {
+  try {
+      // Extract data from request body
+      const { doctorId, patientName, patientAge, patientGender, patientHistory, patientContact } = req.body;
+
+      // Validate input (Basic checks)
+      if (!doctorId || !patientName || !patientAge || !patientGender || !patientHistory || !patientContact) {
+          return res.status(400).json({ error: "All fields are required" });
+      }
+
+      // SQL Query to Insert Data
+      const query = `INSERT INTO patient_details (doctor_id, patient_name, age, gender, tumor_history, contact, created_at)
+                     VALUES (?, ?, ?, ?, ?, ?, NOW())`;
+
+      // Execute Query
+      db.query(query, [doctorId, patientName, patientAge, patientGender, patientHistory, patientContact], (err, result) => {
+          if (err) {
+              console.error("Database error:", err);
+              return res.status(500).json({ error: "Database error", details: err.sqlMessage });
+          }
+
+          res.status(201).json({ message: "Patient added successfully!", patientId: result.insertId });
+      });
+  } catch (error) {
+      console.error("Unexpected server error:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
 // Start server
 const PORT = process.env.PORT || 5055;
 app.listen(PORT, () => {

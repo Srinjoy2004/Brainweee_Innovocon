@@ -201,8 +201,8 @@
                 <div class="mb-4">
                     <label class="block text-sm font-medium mb-1" for="doctorId">Doctor's Id</label>
                     <input type="text" id="doctorId" name="doctorId"
-                        class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600" value="12345"
-                        readonly required>
+                        class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600" 
+                        placeholder="Enter doctor id"required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium mb-1" for="patientName">Patient Name</label>
@@ -241,13 +241,7 @@
                         class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600"
                         placeholder="Enter contact number" required>
                 </div>
-                <!-- Upload MRI Report Field -->
-                <!-- <div class="mb-4">
-                    <label class="block text-sm font-medium mb-1" for="mriReport">Upload MRI Report</label>
-                    <input type="file" id="mriReport" name="mriReport"
-                        class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-                        accept="image/*,application/pdf">
-                </div> -->
+               
                 <div class="flex justify-end">
                     <button type="submit"
                         class="bg-[#019863] hover:bg-[#017f55] text-white font-bold py-2 px-4 rounded">Submit</button>
@@ -255,6 +249,48 @@
             </form>
         </div>
     </div>
+
+    <script>
+    document.getElementById("addPatientForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form default submission
+
+    const patientData = {
+        doctorId: document.getElementById("doctorId").value,
+        patientName: document.getElementById("patientName").value,
+        patientAge: document.getElementById("patientAge").value,
+        patientGender: document.getElementById("patientGender").value,
+        patientHistory: document.getElementById("patientHistory").value,
+        patientContact: document.getElementById("patientContact").value,
+    };
+
+    fetch("http://localhost:5000/add-patient", {  // ✅ Ensure the correct API URL
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(patientData),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert("Error: " + data.error);
+        } else {
+            alert("Patient added successfully!");
+            document.getElementById("addPatientForm").reset(); // Clear form
+        }
+    })
+    .catch(error => {
+        console.error("Fetch error:", error);
+        alert("Failed to connect to server. Check console for details.");
+    });
+});
+
+        
+        // function closeAddPatientModal() {
+        //     document.getElementById("addPatientModal").classList.add("hidden");
+        // }
+        </script>
+        
 
     <!-- Modal: Analyse Patient Popup -->
     <div id="analysePopupModal"
