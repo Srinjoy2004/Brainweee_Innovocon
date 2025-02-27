@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans:wght@400;500;700;900&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800" />
+    <title>Brainwee | AI-Powered Brain Tumor Diagnostics</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <!-- Smooth scrolling and animations -->
+
+    <link rel="stylesheet" href="./Landing.css" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = { darkMode: "class" };
+    </script>
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-[#1A1A1A] dark:text-white"
+    style="font-family: 'Plus Jakarta Sans', 'Noto Sans', sans-serif;">
+    <!-- Sticky Navbar placed directly in body -->
+    <header
+        class="sticky top-0 z-50 bg-white dark:bg-[#1A1A1A] border-b border-gray-300 dark:border-gray-600 px-5 py-3 sm:px-10">
+        <div class="flex items-center justify-between">
+            <!-- Logo & Brand -->
+            <div class="flex items-center gap-4">
+                <div class="w-8 h-8">
+                    <img src="https://img.freepik.com/premium-photo/closeup-white-human-brain-black-background-3d_594857-1323.jpg?w=360"
+                        alt="Brainwee Logo" class="w-full h-full object-cover rounded-full" />
+                </div>
+                <h2 class="text-lg font-bold">Brainwee</h2>
+            </div>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-9">
+                <a class="text-sm font-medium transition-transform duration-200 hover:scale-105"
+                    href="#key-features">Key Features</a>
+                <a class="text-sm font-medium transition-transform duration-200 hover:scale-105" href="#our-impact">Our
+                    Impact</a>
+                <a class="text-sm font-medium transition-transform duration-200 hover:scale-105"
+                    href="#contact-us">Contact Us</a>
+            </nav>
+            <!-- Desktop Buttons & Theme Toggle -->
+            <div class="hidden md:flex items-center gap-4">
+                <button class="open-signup-modal rounded-full h-10 px-4 bg-[#019863] text-sm font-bold">Sign Up
+                    Free</button>
+                <button
+                    class="open-signin-modal rounded-full h-10 px-4 bg-transparent border border-white text-black dark:bg-[#2E2E2E] dark:border-none dark:text-white text-sm font-bold">Sign
+                    In</button>
+                <button id="theme-toggle" class="focus:outline-none">
+                    <span id="theme-text" class="text-gray-900 dark:text-white">Dark Mode</span>
+                </button>
+            </div>
+            <!-- Mobile: Theme Toggle & Hamburger -->
+            <div class="flex md:hidden items-center gap-4">
+                <button id="theme-toggle-mobile" class="focus:outline-none">
+                    <span id="theme-text-mobile" class="text-gray-900 dark:text-white">Dark Mode</span>
+                </button>
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900 dark:text-white" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden mt-3 flex-col gap-2 md:hidden">
+            <nav class="flex flex-col gap-2">
+                <a class="text-sm font-medium transition-transform duration-200 hover:scale-105"
+                    href="#key-features">Key Features</a>
+                <a class="text-sm font-medium transition-transform duration-200 hover:scale-105" href="#our-impact">Our
+                    Impact</a>
+                <a class="text-sm font-medium transition-transform duration-200 hover:scale-105"
+                    href="#contact-us">Contact Us</a>
+            </nav>
+            <div class="flex gap-2 mt-3">
+                <button class="open-signup-modal rounded-full h-10 px-4 bg-[#019863] text-sm font-bold">Sign Up
+                    Free</button>
+                <button
+                    class="open-signin-modal rounded-full h-10 px-4 bg-transparent border border-white text-black dark:bg-[#2E2E2E] dark:border-none dark:text-white text-sm font-bold">Sign
+                    In</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content and Footer Wrapper -->
+    <div class="flex flex-col flex-1">
+        <!-- Main Content -->
+        <main class="px-5 py-5 sm:px-10 lg:px-40">
+            <div class="max-w-4xl mx-auto">
+                <!-- Hero Section -->
+                <section class="flex flex-col gap-6 px-4 py-10 sm:flex-row sm:gap-8 section-animate">
+                    <!-- Circular Hero Image -->
+                    <div class="w-full aspect-square bg-center bg-cover rounded-full border-4 border-blue-500 sm:min-w-[400px]"
+                        style='background-image: url("https://www.nottingham.ac.uk/PressReleaseLongForm-Images/Science/ISBrainTumourMarch23JI.xdcac9399.jpg");'>
+                    </div>
+                    <div class="flex flex-col gap-6 sm:min-w-[400px] md:justify-center text-center">
+                        <h1 class="text-4xl sm:text-5xl font-black leading-tight tracking-[-0.033em] text-animate">
+                            Brainwee: AI-Powered Brain Tumor Diagnostics
+                        </h1>
+                        <p class="text-sm sm:text-base text-animate">
+                            Transforming brain tumor diagnostics for doctors with secure MRI uploads, AI-driven
+                            detection, detailed heat maps, stage detection &amp; tumor classification, an intelligent
+                            chatbot, and a secure, intuitive doctor dashboard.
+                        </p>
+                        <div class="flex flex-wrap gap-3 justify-center">
+                            <button
+                                class="open-signup-modal rounded-full h-10 px-4 bg-[#019863] text-sm font-bold sm:h-12 sm:px-5">Sign
+                                Up Free</button>
+                            <button
+                                class="open-signin-modal rounded-full h-10 px-4 bg-transparent border border-white text-black dark:bg-[#2E2E2E] dark:border-none dark:text-white text-sm font-bold sm:h-12 sm:px-5">
+                                Sign In
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Key Features Section -->
+                <section id="key-features" class="py-10 section-animate">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-bold">Key Features</h2>
+                        <p class="mt-3 text-base">Discover the power behind Brainwee</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        <!-- Feature Card 1 -->
+                        <div
+                            class="rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 p-6 transition-all duration-300 hover:shadow-[0_0_20px_5px_rgba(1,152,99,0.6)]">
+                            <h3 class="text-xl font-bold mb-2">Secure MRI Uploads</h3>
+                            <p class="text-sm">Upload MRI scans safely with end-to-end encryption and HIPAA-compliant
+                                data handling.</p>
+                        </div>
+                        <!-- Feature Card 2 -->
+                        <div
+                            class="rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 p-6 transition-all duration-300 hover:shadow-[0_0_20px_5px_rgba(1,152,99,0.6)]">
+                            <h3 class="text-xl font-bold mb-2">AI-Driven Detection</h3>
+                            <p class="text-sm">Our advanced AI system analyzes scans and delivers a simple "Yes" or "No"
+                                diagnosis.</p>
+                        </div>
+                        <!-- Feature Card 3 -->
+                        <div
+                            class="rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 p-6 transition-all duration-300 hover:shadow-[0_0_20px_5px_rgba(1,152,99,0.6)]">
+                            <h3 class="text-xl font-bold mb-2">Heat Map &amp; Risk Analysis</h3>
+                            <p class="text-sm">Generate detailed heat maps that highlight risk areas and provide
+                                in-depth analysis.</p>
+                        </div>
+                        <!-- Feature Card 4 -->
+                        <div
+                            class="rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 p-6 transition-all duration-300 hover:shadow-[0_0_20px_5px_rgba(1,152,99,0.6)]">
+                            <h3 class="text-xl font-bold mb-2">Stage Detection &amp; Classification</h3>
+                            <p class="text-sm">Automatically detect tumor stages and classify tumor types for
+                                personalized treatment.</p>
+                        </div>
+                        <!-- Feature Card 5 -->
+                        <div
+                            class="rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 p-6 transition-all duration-300 hover:shadow-[0_0_20px_5px_rgba(1,152,99,0.6)]">
+                            <h3 class="text-xl font-bold mb-2">Intelligent Chatbot</h3>
+                            <p class="text-sm">Get real-time, reliable information about brain tumors through our AI
+                                chatbot.</p>
+                        </div>
+                        <!-- Feature Card 6 -->
+                        <div
+                            class="rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 p-6 transition-all duration-300 hover:shadow-[0_0_20px_5px_rgba(1,152,99,0.6)]">
+                            <h3 class="text-xl font-bold mb-2">Secure Doctor Dashboard</h3>
+                            <p class="text-sm">Manage patients and collaborate with peers using our intuitive and secure
+                                dashboard.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Our Impact Section -->
+                <section id="our-impact" class="py-20 px-4 bg-gray-100 dark:bg-gray-800 rounded-lg section-animate">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 class="text-3xl font-bold">Our Impact</h2>
+                        <p class="mt-4 text-base">We deliver reliability, security, and efficiency.</p>
+                        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                            <!-- Impact Card 1 -->
+                            <div
+                                class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_20px_5px_rgba(29,78,216,0.7)] hover:text-white">
+                                <h3 class="text-xl font-bold">99.9% Uptime</h3>
+                                <p class="mt-2 text-sm">Our platform is built for reliability with industry-leading
+                                    uptime.</p>
+                            </div>
+                            <!-- Impact Card 2 -->
+                            <div
+                                class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_20px_5px_rgba(29,78,216,0.7)] hover:text-white">
+                                <h3 class="text-xl font-bold">Data Security</h3>
+                                <p class="mt-2 text-sm">Fully compliant with healthcare regulations ensuring patient
+                                    data safety.</p>
+                            </div>
+                            <!-- Impact Card 3 -->
+                            <div
+                                class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_20px_5px_rgba(29,78,216,0.7)] hover:text-white">
+                                <h3 class="text-xl font-bold">User-Friendly</h3>
+                                <p class="mt-2 text-sm">Intuitive design that reduces training time and boosts
+                                    efficiency.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Us Section -->
+                <section id="contact-us" class="py-10 px-4 bg-gray-200 dark:bg-gray-900 rounded-lg section-animate">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+                        <p class="text-base mb-6">
+                            For inquiries, please email us at
+                            <a href="mailto:info@brainwee.com"
+                                class="text-blue-600 dark:text-blue-400">info@brainwee.com</a>
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="flex justify-center">
+            <div class="w-full max-w-4xl">
+                <div class="flex flex-col gap-6 px-5 py-10 text-center">
+                    <div class="flex flex-wrap items-center justify-center gap-6 sm:justify-around">
+                        <a class="text-base text-gray-700 dark:text-gray-300" href="#">Privacy Policy</a>
+                        <a class="text-base text-gray-700 dark:text-gray-300" href="#">Terms of Service</a>
+                        <a class="text-base text-gray-700 dark:text-gray-300" href="#">Support</a>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#">
+                            <div class="text-gray-700 dark:text-gray-300" data-icon="FacebookLogo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="text-gray-700 dark:text-gray-300" data-icon="TwitterLogo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="text-gray-700 dark:text-gray-300" data-icon="LinkedinLogo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216Z">
+                                    </path>
+                                    <path d="M96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Z" />
+                                    <path
+                                        d="M184,140v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140Z" />
+                                    <circle cx="100" cy="84" r="12" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="text-base text-gray-700 dark:text-gray-300"></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Sign In Modal -->
+     
+    <div id="signin-modal" class="fade-in fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-96">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Sign In</h2>
+                <button id="close-signin-modal" class="text-gray-900 dark:text-white text-2xl">&times;</button>
+            </div>
+            <form method="POST" action="/login">
+                <div class="mb-4">
+                    <label for="signin-email"
+                        class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="mb-6">
+                    <label for="signin-password"
+                        class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="flex items-center justify-between">
+                    <button
+                        class="bg-[#019863] hover:bg-[#017f55] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        type="submit">
+                        Sign In
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal with Integrated Password Strength & Matching (Smaller Width) -->
+    <!-- Sign Up Modal with Integrated Password Strength & Matching (Wider, 2-column Grid with Confirm Password on 4th Row) -->
+    
+   
+
+    <div id="signup-modal" class="fade-in fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-[40rem]">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Sign Up</h2>
+                <button id="close-signup-modal" class="text-gray-900 dark:text-white text-2xl">&times;</button>
+            </div>
+            <form id="signup-form" method="POST" action="/registration" class="grid grid-cols-2 gap-4">
+                <!-- Row 1: Full Name and Email -->
+                <div>
+                    <label for="signup-name" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Full
+                        Name</label>
+                    <input type="text" id="name" name="name" placeholder="Full Name"
+                        class="bg-gray-100 dark:bg-gray-700 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 focus:outline-none focus:shadow-outline">
+                </div>
+                <div>
+                    <label for="signup-email"
+                        class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email"
+                        class="bg-gray-100 dark:bg-gray-700 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 focus:outline-none focus:shadow-outline">
+                </div>
+                <!-- Row 2: Doctor Registration Number (Full Width) -->
+                <div class="col-span-2">
+                    <label for="doctor-reg-number"
+                        class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Doctor Registration
+                        Number</label>
+                    <input type="text" id="reg_no" name="reg_no" placeholder="Registration Number"
+                        class="bg-gray-100 dark:bg-gray-700 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 focus:outline-none focus:shadow-outline">
+                </div>
+                <!-- Row 3: Password -->
+                <div class="col-span-2">
+                    <label for="signup-password"
+                        class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Password</label>
+                    <div class="relative">
+                        <input type="password" id="password" name="password" placeholder="Create a strong password"
+                            class="bg-gray-100 dark:bg-gray-700 shadow appearance-none border rounded w-full py-2 px-3 pr-10 text-gray-700 dark:text-gray-300 focus:outline-none focus:shadow-outline">
+                        <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center"
+                            onclick="togglePassword('password')">
+                            <!-- Eye Icon (Password hidden) -->
+                            <svg id="toggleIcon-signup-password" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Strength Meter & Requirements (Hidden until typing) -->
+                    <div class="mt-2 hidden" id="strength-container">
+                        <div class="strength-meter bg-gray-300 h-1 rounded"></div>
+                    </div>
+                    <div class="mt-2 space-y-1 text-sm hidden" id="requirements-container">
+                        <div class="requirement-item" data-requirement="length"><span>✓</span> At least 8 characters
+                        </div>
+                        <div class="requirement-item" data-requirement="uppercase"><span>✓</span> At least one uppercase
+                            letter</div>
+                        <div class="requirement-item" data-requirement="lowercase"><span>✓</span> At least one lowercase
+                            letter</div>
+                        <div class="requirement-item" data-requirement="number"><span>✓</span> At least one number</div>
+                        <div class="requirement-item" data-requirement="special"><span>✓</span> At least one special
+                            character</div>
+                    </div>
+                </div>
+             
+                <!-- Row 5: Sign Up Button (Full Width) -->
+                <div class="col-span-2">
+                    <button type="submit"
+                        class="w-full bg-[#019863] hover:bg-[#017f55] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        type="button">
+                        Sign Up
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </form>
+
+    <!-- Toggle Password Function -->
+
+
+
+
+    <!-- <script src="./Landing.js"></script> -->
+<script>
+function togglePassword(inputId) {
+  const input = document.getElementById(inputId);
+  const button = input.nextElementSibling;
+  const type = input.getAttribute("type") === "password" ? "text" : "password";
+  input.setAttribute("type", type);
+
+  // Update the icon based on the type
+  if (type === "password") {
+    button.innerHTML = `
+    <svg id="toggleIcon-${inputId}" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+      <circle cx="12" cy="12" r="3"></circle>
+    </svg>`;
+  } else {
+    button.innerHTML = `
+    <svg id="toggleIcon-${inputId}" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M17.94 17.94L6.06 6.06"></path>
+      <path d="M1 1l22 22"></path>
+    </svg>`;
+  }
+}
+
+function togglePassword(inputId) {
+  const input = document.getElementById(inputId);
+  const button = input.nextElementSibling;
+  const type = input.getAttribute("type") === "password" ? "text" : "password";
+  input.setAttribute("type", type);
+
+  // Update the icon based on the type
+  if (type === "password") {
+    button.innerHTML = `
+    <svg id="toggleIcon-${inputId}" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+      <circle cx="12" cy="12" r="3"></circle>
+    </svg>`;
+  } else {
+    button.innerHTML = `
+    <svg id="toggleIcon-${inputId}" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M17.94 17.94L6.06 6.06"></path>
+      <path d="M1 1l22 22"></path>
+    </svg>`;
+  }
+}
+
+// Mobile Menu Toggle
+const menuToggle = document.getElementById("menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+
+menuToggle.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+  if (mobileMenu.classList.contains("hidden")) {
+    menuToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>`;
+  } else {
+    menuToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+  </svg>`;
+  }
+});
+
+// Theme Toggle for Desktop & Mobile
+const themeToggle = document.getElementById("theme-toggle");
+const themeText = document.getElementById("theme-text");
+const themeToggleMobile = document.getElementById("theme-toggle-mobile");
+const themeTextMobile = document.getElementById("theme-text-mobile");
+
+function setTheme(isDark) {
+  if (isDark) {
+    document.documentElement.classList.add("dark");
+    themeText.innerText = "Dark Mode";
+    themeTextMobile.innerText = "Dark Mode";
+  } else {
+    document.documentElement.classList.remove("dark");
+    themeText.innerText = "Light Mode";
+    themeTextMobile.innerText = "Light Mode";
+  }
+}
+
+themeToggle.addEventListener("click", () => {
+  setTheme(!document.documentElement.classList.contains("dark"));
+});
+themeToggleMobile.addEventListener("click", () => {
+  setTheme(!document.documentElement.classList.contains("dark"));
+});
+
+// Intersection Observer for triggering animations on scroll
+document.addEventListener("DOMContentLoaded", function () {
+  const observerOptions = {
+    root: null,
+    threshold: 0.1,
+  };
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  document.querySelectorAll(".section-animate, .text-animate").forEach((el) => {
+    observer.observe(el);
+  });
+});
+
+// Sign In Modal Functionality
+const signinModal = document.getElementById("signin-modal");
+const openSigninButtons = document.querySelectorAll(".open-signin-modal");
+const closeSigninButton = document.getElementById("close-signin-modal");
+
+openSigninButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    signinModal.classList.remove("hidden");
+    // Close mobile menu if open
+    mobileMenu.classList.add("hidden");
+    // Update hamburger icon to hamburger
+    menuToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>`;
+    // Disable background scroll when modal is open
+    document.body.classList.add("overflow-hidden");
+  });
+});
+
+closeSigninButton.addEventListener("click", () => {
+  signinModal.classList.add("hidden");
+  document.body.classList.remove("overflow-hidden");
+});
+
+// Sign Up Modal Functionality
+const signupModal = document.getElementById("signup-modal");
+const openSignupButtons = document.querySelectorAll(".open-signup-modal");
+const closeSignupButton = document.getElementById("close-signup-modal");
+
+openSignupButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    signupModal.classList.remove("hidden");
+    mobileMenu.classList.add("hidden");
+    menuToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>`;
+    document.body.classList.add("overflow-hidden");
+  });
+});
+
+closeSignupButton.addEventListener("click", () => {
+  signupModal.classList.add("hidden");
+  document.body.classList.remove("overflow-hidden");
+});
+
+// -------------------------------
+// Password Strength and Matching Logic for Sign Up Modal
+// -------------------------------
+const signupPasswordInput = document.getElementById("password");
+const signupConfirmPasswordInput = document.getElementById(
+  "confirmPassword"
+);
+const strengthMeter = document.querySelector(".strength-meter");
+const requirementItems = document.querySelectorAll(".requirement-item");
+const matchMessage = document.querySelector(".match-message");
+
+const passwordRequirements = {
+  length: { regex: /.{8,}/, index: 0 },
+  uppercase: { regex: /[A-Z]/, index: 1 },
+  lowercase: { regex: /[a-z]/, index: 2 },
+  number: { regex: /[0-9]/, index: 3 },
+  special: { regex: /[^A-Za-z0-9]/, index: 4 },
+};
+
+function togglePassword(inputId) {
+  const input = document.getElementById(inputId);
+  const button = input.nextElementSibling;
+  const type = input.getAttribute("type") === "password" ? "text" : "password";
+  input.setAttribute("type", type);
+
+  if (type === "password") {
+    button.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+      <circle cx="12" cy="12" r="3"></circle>
+  </svg>`;
+  } else {
+    button.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0="1-4.24-4.24"></path>
+      <line x1="1" y1="1" x2="23" y2="23"></line>
+  </svg>`;
+  }
+}
+
+function updatePasswordStrength(password) {
+  let strength = 0;
+  Object.keys(passwordRequirements).forEach((req) => {
+    const isValid = passwordRequirements[req].regex.test(password);
+    const item = requirementItems[passwordRequirements[req].index];
+    if (isValid) {
+      strength++;
+      item.classList.add("text-green-600");
+      item.classList.remove("text-red-600");
+    } else {
+      item.classList.add("text-red-600");
+      item.classList.remove("text-green-600");
+    }
+  });
+  strengthMeter.className = "strength-meter bg-gray-300 h-1 rounded";
+  if (strength > 3) {
+    strengthMeter.classList.add("bg-green-500");
+  } else if (strength > 2) {
+    strengthMeter.classList.add("bg-yellow-500");
+  } else if (strength > 0) {
+    strengthMeter.classList.add("bg-red-500");
+  }
+}
+
+function checkPasswordMatch() {
+  const password = signupPasswordInput.value;
+  const confirmPassword = signupConfirmPasswordInput.value;
+  if (confirmPassword) {
+    if (password === confirmPassword) {
+      matchMessage.textContent = "Passwords match";
+      matchMessage.classList.add("text-green-600");
+      matchMessage.classList.remove("text-red-600");
+      signupConfirmPasswordInput.classList.remove("border-red-500");
+      signupConfirmPasswordInput.classList.add("border-green-500");
+    } else {
+      matchMessage.textContent = "Passwords do not match";
+      matchMessage.classList.add("text-red-600");
+      matchMessage.classList.remove("text-green-600");
+      signupConfirmPasswordInput.classList.add("border-red-500");
+      signupConfirmPasswordInput.classList.remove("border-green-500");
+    }
+  } else {
+    matchMessage.textContent = "";
+  }
+}
+
+signupPasswordInput.addEventListener("input", () => {
+  // Show meter and requirements when user starts typing
+  if (signupPasswordInput.value.trim() === "") {
+    document.getElementById("strength-container").classList.add("hidden");
+    document.getElementById("requirements-container").classList.add("hidden");
+  } else {
+    document.getElementById("strength-container").classList.remove("hidden");
+    document
+      .getElementById("requirements-container")
+      .classList.remove("hidden");
+  }
+  updatePasswordStrength(signupPasswordInput.value);
+  checkPasswordMatch();
+});
+
+signupConfirmPasswordInput.addEventListener("input", checkPasswordMatch);
+
+
+//reg
+document.getElementById("signup-form").addEventListener("submit", async function (event) {
+    event.preventDefault(); // Prevent page reload
+
+    // Collect form data
+    const formData = new FormData(this);
+
+    const data = {
+        name: formData.get("name"),  // Ensure your form has an input with name="name"
+        email: formData.get("email"),
+        reg_no: formData.get("reg_no"),
+        password: formData.get("password"),
+       // confirm_password: formData.get("confirm_password"),
+    };
+
+    console.log("Collected Data:", data); // ✅ Debugging: Log collected form data
+
+    // Ensure no fields are missing
+    if (!data.name || !data.email || !data.reg_no || !data.password ) {
+        alert("Please fill all fields!");
+        return;
+    }
+
+    // Password confirmation check
+    if (data.password !== data.confirm_password) {
+        alert("Passwords do not match!");
+        return;
+    }
+
+    try {
+        // Send data to backend
+        const response = await fetch("http://localhost:5000/registration", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: data.name,
+                email: data.email,
+                reg_no: data.reg_no,
+                password: data.password, // ✅ Only sending required fields
+            }),
+        });
+
+        const result = await response.json();
+
+        console.log("Server Response:", result); // ✅ Debugging: Log server response
+
+        if (response.ok) {
+            alert("Registration successful!");
+            window.location.href = "test.html"; // Redirect to test page
+        } else {
+            alert(`Error: ${result.message}`);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Something went wrong. Please try again.");
+    }
+});
+
+//login
+
+document.getElementById("login-form").addEventListener("submit", async function (event) {
+    event.preventDefault(); // Prevent page reload
+
+    // Collect form data
+    const formData = new FormData(this);
+
+    const data = {
+        email: formData.get("email"),
+        password: formData.get("password"),
+    };
+
+    console.log("Collected Data:", data); // ✅ Debugging: Log collected form data
+
+    // Ensure no fields are missing
+    if (!data.email || !data.password) {
+        alert("Please fill in both email and password!");
+        return;
+    }
+
+    try {
+        // Send data to backend
+        const response = await fetch("http://localhost:5000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+
+        console.log("Server Response:", result); // ✅ Debugging: Log server response
+
+        if (response.ok) {
+            alert("Login successful!");
+            window.location.href = "dashboard.html"; // Redirect to dashboard
+        } else {
+            alert(`Error: ${result.message}`);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Something went wrong. Please try again.");
+    }
+});
+
+
+</script>
+</body>
+
+</html>
