@@ -186,7 +186,7 @@
     </div>
 
     <!-- Modal: Add Patient Form -->
-    <div id="addPatientModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+    <div id="addPatientModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50 backdrop-blur-md">
         <div class="bg-white dark:bg-gray-800 p-6 rounded-md shadow-lg w-full max-w-md relative">
             <!-- Close Button -->
             <button onclick="closeAddPatientModal()"
@@ -294,7 +294,7 @@
 
     <!-- Modal: Analyse Patient Popup -->
     <div id="analysePopupModal"
-        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50 backdrop-blur-md">
         <div class="bg-white dark:bg-gray-800 p-6 rounded-md shadow-lg w-full max-w-3xl relative">
 
             <!-- Close Button -->
@@ -368,7 +368,7 @@
                     tumorResult.innerText = "Error: " + data.error;
                 } else {
                     console.log("Tumor Prediction:", data.tumor_type);
-                    tumorResult.innerText = `Tumor: ${data.tumor_type} (Confidence: ${data.confidence})`;
+                    tumorResult.innerText = `Tumor: ${data.tumor_type}`;
                 }
             })
             .catch(error => {
@@ -405,7 +405,7 @@
     <!-- </script> -->
 
     <!-- Modal: AI Chat Box -->
-    <div id="aiChatModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-[9999]">
+    <div id="aiChatModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-[9999] backdrop-blur-md">
 
         <!-- Outer Wrapper: Fixed height, hidden overflow to clip the iframe -->
         <div class="bg-white dark:bg-gray-800 rounded-md shadow-lg w-full max-w-3xl mx-4 relative overflow-hidden"
