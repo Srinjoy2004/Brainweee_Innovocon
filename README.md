@@ -1,4 +1,4 @@
-# The Axios - INNOVOCON 2k25
+#  BRAINWEE By The Axios for - INNOVOCON 2k25
 
 ## 🏥 Brain Tumor Segmentation using Deep Learning
 
@@ -31,6 +31,11 @@ This project focuses on detecting and segmenting brain tumors using deep learnin
 
 
 ---
+##  Chat-Support Preview
+![Chat-Support](./Chatbot.png)
+
+
+---
 
 ## 📂 Folder Structure
 ```
@@ -55,13 +60,13 @@ This project focuses on detecting and segmenting brain tumors using deep learnin
 
 ### 📊 Performance Graphs
 #### Segmentation Performance
-![Segmentation Graph](/segmentation_graph.jpeg)
+![Segmentation Graph](/Segmentation_performance_1.jpeg)
 
 #### Classification Performance
-![Classification Graph](/classification_graph.jpeg)
+![Classification Graph](/Classification_performance_1.jpeg)
 
 #### Confusion Matrix
-![Confusion Matrix](/classification_confusion_matrix.jpeg)
+![Confusion Matrix](/Confusion_Matrix_1.jpeg)
 
 #### Segmentation Results
 ![Segmentation Result](/segmentation_result.jpeg)
@@ -86,9 +91,11 @@ This project focuses on detecting and segmenting brain tumors using deep learnin
 - **Srinjoy Pramanik** - Backend Engineer
 - **Rupkatha Sharma** - Machine Learning Expert
 - **Syed Md Musharraf** - Deep Learning Engineer
+- **Ayushi  Bose** - Frontend Contributor
 - **Mayukh Bhowmik** - Frontend Engineer
+
 
 
 ---
 
-## 📝 This Project is Specially Made For DIVERSION @2025 By Team Axios
+## 📝 This Project is Specially Made For INNOVOCON @2025 By Team Axios
