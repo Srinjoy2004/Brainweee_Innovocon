@@ -1,4 +1,4 @@
-# The Axios - DIVERSION 2k25
+# The Axios - INNOVOCON 2k25
 
 ## 🏥 Brain Tumor Segmentation using Deep Learning
 
@@ -13,11 +13,22 @@ This project focuses on detecting and segmenting brain tumors using deep learnin
 - **Post-processing**: Applies Gaussian smoothing and morphological operations to refine segmentation masks.
 - **Visualization**: Displays predicted masks and overlays them on MRI images.
 - **Web App**: Provides a simple UI for uploading and processing MRI scans.
-
 ---
 
-## 💀 Homepage Preview
-![Homepage](static/images/homepage.jpeg)
+
+##  Homepage Preview
+![Homepage](./homepage.png)
+
+
+---
+##  Key  Features Preview
+![Key_Features](./key_features.png)
+
+
+---
+##  DashBoard Preview
+![DashBoard](./Dashboard.png)
+
 
 ---
 
@@ -39,56 +50,28 @@ This project focuses on detecting and segmenting brain tumors using deep learnin
 
 ---
 
-## 🛠️ Installation & Setup
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/your-username/The-Axios-BrainTumorSegmentation.git
-cd The-Axios-BrainTumorSegmentation
-```
 
-### 2️⃣ Create a Virtual Environment
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-```
-
-### 3️⃣ Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 4️⃣ Run the Application
-```bash
-python app.py
-```
-The app will be available at `http://127.0.0.1:5000/`
-
----
-
-## 🖼️ Sample Output
-### ✅ Expected Mask vs. Predicted Mask
-![Predicted Mask](static/heatmaps/predicted_mask.png)
 
 ### 📊 Performance Graphs
 #### Segmentation Performance
-![Segmentation Graph](static/images/segmentation_graph.jpeg)
+![Segmentation Graph](/segmentation_graph.jpeg)
 
 #### Classification Performance
-![Classification Graph](static/images/classification_graph.jpeg)
+![Classification Graph](/classification_graph.jpeg)
 
 #### Confusion Matrix
-![Confusion Matrix](static/images/classification_confusion_matrix.jpeg)
+![Confusion Matrix](/classification_confusion_matrix.jpeg)
 
 #### Segmentation Results
-![Segmentation Result](static/images/segmentation_result.jpeg)
+![Segmentation Result](/segmentation_result.jpeg)
 
 ---
 
 ## 🤖 Technologies Used
 - **Python** (TensorFlow, OpenCV, NumPy, Matplotlib, Flask)
 - **Deep Learning** (CNN-based segmentation model)
-- **Frontend** (HTML, CSS, JavaScript)
+- **Frontend** (HTML, CSS, JavaScript,Tailwind CSS)
 
 ---
 
@@ -100,13 +83,12 @@ The app will be available at `http://127.0.0.1:5000/`
 ---
 
 ## 🏆 Contributors
-- **Your Name** - Deep Learning Engineer
-- **Team Member 2** - Backend Developer
-- **Team Member 3** - UI/UX Designer
+- **Srinjoy Pramanik** - Backend Engineer
+- **Rupkatha Sharma** - Machine Learning Expert
+- **Syed Md Musharraf** - Deep Learning Engineer
+- **Mayukh Bhowmik** - Frontend Engineer
 
-💎 Contact us at: `your-email@example.com`
 
 ---
 
-## 📝 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 📝 This Project is Specially Made For DIVERSION @2025 By Team Axios
