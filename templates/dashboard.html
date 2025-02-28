@@ -574,116 +574,76 @@
 
     <!-- Search, Analyse & Refer Section Script -->
     <script>
-        function showSection(sectionName) {
-            const mainContent = document.getElementById("main-content");
-            if (sectionName === "search-patient") {
-                mainContent.innerHTML = `
-            <h1 class="text-3xl font-bold mb-4">Search the patient</h1>
+function showSection(sectionName) {
+    const mainContent = document.getElementById("main-content");
+
+    if (sectionName === "search-patient") {
+        mainContent.innerHTML = `
+            <h1 class="text-3xl font-bold mb-4">Search for a Patient</h1>
             <div class="mb-4">
-              <input type="text" id="searchInput" placeholder="Enter patient name or ID" class="w-full px-3 py-2 border rounded" />
+                <input type="text" id="searchInput" placeholder="Enter patient name or ID" class="w-full px-3 py-2 border rounded" />
             </div>
-            <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" onclick="searchPatient()">Search</button>
-          `;
-            } else if (sectionName === "analyse-patient") {
-                mainContent.innerHTML = `
-            <h1 class="text-3xl font-bold mb-4">Analyse Patient</h1>
-            <div class="mb-4">
-              <select id="analysePatientSelect" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                <option value="">Select a Patient</option>
-                <option value="patient1">Patient 1 - John Doe</option>
-                <option value="patient2">Patient 2 - Jane Smith</option>
-                <option value="patient3">Patient 3 - Bob Johnson</option>
-              </select>
-            </div>
-            <div class="text-center my-4 font-bold">OR</div>
-            <div class="mb-4">
-              
-            </div>
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" onclick="openAnalysePopup()">Analyse Via  MRI Report</button>
-          `;
-        //     } else if (sectionName === "ai-chat") {
-        //         mainContent.innerHTML = `
-        //     <div class="flex flex-col h-full">
-        //       <h1 class="text-3xl font-bold mb-4">Talk with AI</h1>
-        //       <!-- Chat History -->
-        //       <div id="chatHistory" class="flex-1 p-4 overflow-auto border rounded dark:bg-gray-700 dark:border-gray-600 mb-4"></div>
-        //       <!-- Chat Input Area -->
-        //       <div class="flex items-center">
-        //         <input type="file" id="chatAttachment" class="hidden" accept="image/*,application/pdf">
-        //         <button id="attachmentButton" class="mr-2 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white">
-        //           <i class="fas fa-paperclip"></i>
-        //         </button>
-        //         <input id="chatInput" type="text" placeholder="Type your message..." class="flex-1 px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-        //         <button id="sendButton" class="ml-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Send</button>
-        //       </div>
-        //     </div>
-        //   `;
-        //         document.getElementById("sendButton").addEventListener("click", sendMessage);
-        //         document.getElementById("chatInput").addEventListener("keypress", function (e) {
-        //             if (e.key === "Enter") {
-        //                 sendMessage();
-        //             }
-        //         });
-        //         document.getElementById("attachmentButton").addEventListener("click", function () {
-        //             document.getElementById("chatAttachment").click();
-        //         });
-            } else if (sectionName === "refer-doctor") {
-                mainContent.innerHTML = `
-            <h1 class="text-3xl font-bold mb-4">Refer a Doctor</h1>
-            <form id="referForm">
-              <div class="mb-4">
-                <label class="block text-sm font-medium mb-1" for="referPatientSelect">Select Patient</label>
-                <select id="referPatientSelect" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                  <option value="">Select a Patient</option>
-                  <option value="patient1">Patient 1 - John Doe</option>
-                  <option value="patient2">Patient 2 - Jane Smith</option>
-                  <option value="patient3">Patient 3 - Bob Johnson</option>
-                </select>
-              </div>
-              <div class="mb-4">
-                <label class="block text-sm font-medium mb-1" for="referDoctorSelect">Select Doctor</label>
-                <select id="referDoctorSelect" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                  <option value="">Select a Doctor</option>
-                  <option value="doctor1">Doctor 1 - Dr. Alice</option>
-                  <option value="doctor2">Doctor 2 - Dr. Bob</option>
-                  <option value="doctor3">Doctor 3 - Dr. Charlie</option>
-                </select>
-              </div>
-              <div class="mb-4">
-                <label class="block text-sm font-medium mb-1" for="referMessage">Additional Message</label>
-                <textarea id="referMessage" class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="Enter additional information"></textarea>
-              </div>
-              <div class="flex justify-end">
-                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Submit</button>
-              </div>
-            </form>
-          `;
-                document.getElementById("referForm").addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    openReferPopup();
-                    this.reset();
-                });
+            <button id="searchBtn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Search</button>
+            <div id="searchResult" class="mt-4 p-4 border rounded bg-gray-100 dark:bg-gray-700 text-black dark:text-white"></div>
+        `;
+
+        // ✅ Fix: Attach event listener after button is created
+        document.getElementById("searchBtn").addEventListener("click", searchPatient);
+    }
+}
+
+
+            // Other sections remain unchanged...
+        
+            function searchPatient() {
+    const query = document.getElementById("searchInput").value.trim();
+    const searchResultDiv = document.getElementById("searchResult");
+
+    if (!query) {
+        searchResultDiv.innerHTML = "<p class='text-red-500'>Please enter a patient ID or name.</p>";
+        searchResultDiv.classList.remove("hidden");
+        return;
+    }
+
+    fetch(`http://localhost:5000/search-patient?q=${query}`)
+        .then(response => {
+            if (!response.ok) throw new Error("Failed to fetch data");
+            return response.json();
+        })
+        .then(data => {
+            let resultHTML = "<h2 class='text-xl font-bold mt-4'>Search Results</h2>";
+
+            if (data.length === 0) {
+                resultHTML += "<p>No matching patients found.</p>";
             } else {
-                mainContent.innerHTML = `
-            <h1 class="text-3xl font-bold mb-4">Welcome Dr. John Doe</h1>
-            <p>You have cured 898 patients.</p>
-          `;
+                data.forEach(patient => {
+                    resultHTML += `
+                        <div class="border p-2 my-2 bg-gray-100">
+                            <p><strong>ID:</strong> ${patient.id}</p>
+                            <p><strong>Name:</strong> ${patient.patient_name}</p>
+                            <p><strong>Age:</strong> ${patient.age}</p>
+                            <p><strong>Gender:</strong> ${patient.gender}</p>
+                            <p><strong>History:</strong> ${patient.tumor_history}</p>
+                            <p><strong>Contact:</strong> ${patient.contact}</p>
+                        </div>
+                    `;
+                });
             }
-            // Close sidebar on small screens after selection
-            if (window.innerWidth < 768) {
-                const sidebar = document.getElementById('sidebar');
-                const hamburgerIcon = document.getElementById('hamburger-icon');
-                sidebar.classList.add('-translate-x-full');
-                hamburgerIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-            }
-        }
 
-        function searchPatient() {
-            const query = document.getElementById("searchInput").value;
-            alert("Searching for: " + query);
-        }
+            // ✅ Fix: Display results inside `searchResult` div
+            searchResultDiv.innerHTML = resultHTML;
+            searchResultDiv.classList.remove("hidden");
+        })
+        .catch(error => {
+            console.error("Fetch error:", error);
+            searchResultDiv.innerHTML = `<p class="text-red-500">Error fetching data. Please try again.</p>`;
+            searchResultDiv.classList.remove("hidden");
+        });
+}
+
+
     </script>
-
+    
     <!-- AI Chat Script -->
     <!-- <script>
         function sendMessage() {

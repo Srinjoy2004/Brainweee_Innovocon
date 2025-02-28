@@ -176,6 +176,41 @@ app.post("/add-patient", (req, res) => {
   }
 });
 
+app.get("/search-patient", async (req, res) => {
+  let searchQuery = req.query.q ? req.query.q.trim() : null; // Trim input
+
+  if (!searchQuery) {
+      return res.status(400).json({ error: "Missing search query." });
+  }
+
+  try {
+      let sql, params;
+
+      // If the input is a number, search by ID
+      if (!isNaN(searchQuery)) {
+          sql = `SELECT * FROM patient_details WHERE id = ?`;
+          params = [searchQuery];
+      } else {
+          // Otherwise, search by patient name (case-insensitive)
+          sql = `SELECT * FROM patient_details WHERE LOWER(patient_name) LIKE LOWER(?)`;
+          params = [`%${searchQuery}%`];
+      }
+
+      const [results] = await db.query(sql, params);
+
+      if (results.length === 0) {
+          return res.status(404).json({ message: "No patient found." });
+      }
+
+      res.json(results);
+  } catch (err) {
+      console.error("Database error:", err);
+      res.status(500).json({ error: "Database query failed." });
+  }
+});
+
+
+
 
 // Start server
 const PORT = process.env.PORT || 5055;
