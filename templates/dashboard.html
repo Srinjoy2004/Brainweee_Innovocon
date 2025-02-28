@@ -587,15 +587,50 @@ function showSection(sectionName) {
             <div id="searchResult" class="mt-4 p-4 border rounded bg-gray-100 dark:bg-gray-700 text-black dark:text-white"></div>
         `;
 
-        // ✅ Fix: Attach event listener after button is created
+        // ✅ Attach event listener after button is created
         document.getElementById("searchBtn").addEventListener("click", searchPatient);
+    } else if (sectionName === "analyse-patient") {
+        openAnalysePopup();  // ✅ Opens the Analyze Patient modal
+    } else if (sectionName === "refer-doctor") {
+        // ✅ Instead of just opening the modal, we load the Refer Doctor form
+        mainContent.innerHTML = `
+            <h1 class="text-3xl font-bold mb-4">Refer a Doctor</h1>
+            <form id="referDoctorForm">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-1" for="doctorName">Doctor's Name</label>
+                    <input type="text" id="doctorName" name="doctorName"
+                        class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+                        placeholder="Enter doctor's name" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-1" for="specialization">Specialization</label>
+                    <input type="text" id="specialization" name="specialization"
+                        class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+                        placeholder="Enter specialization" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-1" for="contact">Contact</label>
+                    <input type="text" id="contact" name="contact"
+                        class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+                        placeholder="Enter contact number" required>
+                </div>
+                <div class="flex justify-end">
+                    <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Submit</button>
+                </div>
+            </form>
+        `;
+
+        // ✅ Attach event listener for form submission
+        document.getElementById("referDoctorForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            alert("Doctor referred successfully!");
+            this.reset();
+        });
     }
 }
 
-
-            // Other sections remain unchanged...
-        
-            function searchPatient() {
+function searchPatient() {
     const query = document.getElementById("searchInput").value.trim();
     const searchResultDiv = document.getElementById("searchResult");
 
@@ -631,7 +666,6 @@ function showSection(sectionName) {
                 });
             }
 
-            // ✅ Fix: Display results inside `searchResult` div
             searchResultDiv.innerHTML = resultHTML;
             searchResultDiv.classList.remove("hidden");
         })
@@ -642,8 +676,7 @@ function showSection(sectionName) {
         });
 }
 
-
-    </script>
+</script>
     
     <!-- AI Chat Script -->
     <!-- <script>
