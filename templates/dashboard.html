@@ -383,16 +383,25 @@
     </script>
     
     
-
-        // Function to open the modal
-        function openAnalysePopup() {
-            document.getElementById("analysePopupModal").classList.remove("hidden");
-        }
-
-        // Function to close the modal
-        function closeAnalysePopup() {
-            document.getElementById("analysePopupModal").classList.add("hidden");
-        }
+<script>
+    // Function to open the modal
+    function openAnalysePopup() {
+        const modal = document.getElementById("analyseModal");  // Locate the modal
+        const mainContent = document.getElementById("main-content");  // Locate main background
+    
+        modal.classList.remove("hidden");  // Show the modal
+        mainContent.style.display = "none";  // Hide background content (Fix for overlapping issue)
+    }
+    
+    // Function to close the modal
+    function closeAnalysePopup() {
+        const modal = document.getElementById("analyseModal");  // Ensure correct ID is used
+        const mainContent = document.getElementById("main-content");
+    
+        modal.classList.add("hidden");  // Hide modal
+        mainContent.style.display = "block";  // Restore background content when closing
+    }
+</script>
     <!-- </script> -->
 
     <!-- Modal: AI Chat Box -->
@@ -576,6 +585,9 @@
     <script>
 function showSection(sectionName) {
     const mainContent = document.getElementById("main-content");
+
+    // ✅ Clear previous content before loading a new section
+    mainContent.innerHTML = ""; 
 
     if (sectionName === "search-patient") {
         mainContent.innerHTML = `
