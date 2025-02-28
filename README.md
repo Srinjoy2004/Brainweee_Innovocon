@@ -6,6 +6,14 @@
 This project focuses on detecting and segmenting brain tumors using deep learning models. The goal is to accurately predict tumor regions in MRI scans, refine the predicted masks, and visualize them effectively.
 
 ---
+##  Our Deployed Model Preview
+[Click Here to Check](https://huggingface.co/spaces/arittrabag/Brain-Tumor-Classification)
+
+
+---
+##  Our Deployed AI Support Preview
+[Click Here to validate](https://www.chatbase.co/chatbot-iframe/17ne20jC-R2I_HYsJm9k1)
+
 
 ## 🚀 Features
 - **Deep Learning Model**: Utilizes a CNN-based approach for brain tumor segmentation.
