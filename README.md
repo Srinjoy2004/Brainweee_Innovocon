@@ -7,7 +7,7 @@ This project focuses on detecting and segmenting brain tumors using deep learnin
 
 ---
 ##  Our Deployed Model Preview
-[Click Here to Check](https://huggingface.co/spaces/arittrabag/Brain-Tumor-Classification)
+[Click Here to Check](https://huggingface.co/spaces/KIZERRRRRR/segmentation_tumor)
 
 
 ---
