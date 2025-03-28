@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <!-- Smooth scrolling and animations -->
 
-    <link rel="stylesheet" href="./Landing.css" />
+    <link rel="stylesheet" href="../static/css/Landing.css" />
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
@@ -87,14 +87,15 @@
         </div>
     </header>
 
+
     <!-- Main Content and Footer Wrapper -->
-    <div class="flex flex-col flex-1">
+    <div class="flex flex-col flex-1 ">
         <!-- Main Content -->
         <main class="px-5 py-5 sm:px-10 lg:px-40">
             <div class="max-w-4xl mx-auto">
                 <!-- Hero Section -->
-                <section class="flex flex-col gap-6 px-4 py-10 sm:flex-row sm:gap-8 section-animate">
-                    <!-- Circular Hero Image -->
+                <section class="flex flex-col gap-6 px-4 py-10 sm:flex-row sm:gap-8 mb-10 section-animate"
+                    style="margin-bottom: 150px;">
                     <div class="w-full aspect-square bg-center bg-cover rounded-full border-4 border-blue-500 sm:min-w-[400px]"
                         style='background-image: url("https://www.nottingham.ac.uk/PressReleaseLongForm-Images/Science/ISBrainTumourMarch23JI.xdcac9399.jpg");'>
                     </div>
@@ -104,7 +105,7 @@
                         </h1>
                         <p class="text-sm sm:text-base text-animate">
                             Transforming brain tumor diagnostics for doctors with secure MRI uploads, AI-driven
-                            detection, detailed heat maps, stage detection &amp; tumor classification, an intelligent
+                            detection, detailed heat maps, stage detection & tumor classification, an intelligent
                             chatbot, and a secure, intuitive doctor dashboard.
                         </p>
                         <div class="flex flex-wrap gap-3 justify-center">
@@ -119,10 +120,12 @@
                     </div>
                 </section>
 
+
+
                 <!-- Key Features Section -->
-                <section id="key-features" class="py-10 section-animate">
-                    <div class="text-center mb-10">
-                        <h2 class="text-3xl font-bold">Key Features</h2>
+                <section id="key-features" class="  py-10 section-animate" style="margin-top: 40px;">
+                    <div class=" text-center mb-10">
+                        <h2 class="text-3xl font-bold" style="margin-top: 40px;">Key Features</h2>
                         <p class="mt-3 text-base">Discover the power behind Brainwee</p>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -268,7 +271,7 @@
     </div>
 
     <!-- Sign In Modal -->
-     
+
     <div id="signin-modal" class="fade-in fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
         <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-96">
             <div class="flex justify-between items-center mb-4">
@@ -301,8 +304,8 @@
 
     <!-- Sign Up Modal with Integrated Password Strength & Matching (Smaller Width) -->
     <!-- Sign Up Modal with Integrated Password Strength & Matching (Wider, 2-column Grid with Confirm Password on 4th Row) -->
-    
-   
+
+
 
     <div id="signup-modal" class="fade-in fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
         <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-[40rem]">
@@ -365,7 +368,7 @@
                             character</div>
                     </div>
                 </div>
-             
+
                 <!-- Row 5: Sign Up Button (Full Width) -->
                 <div class="col-span-2">
                     <button type="submit"
@@ -385,369 +388,369 @@
 
 
     <!-- <script src="./Landing.js"></script> -->
-<script>
-function togglePassword(inputId) {
-  const input = document.getElementById(inputId);
-  const button = input.nextElementSibling;
-  const type = input.getAttribute("type") === "password" ? "text" : "password";
-  input.setAttribute("type", type);
+    <script>
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const button = input.nextElementSibling;
+            const type = input.getAttribute("type") === "password" ? "text" : "password";
+            input.setAttribute("type", type);
 
-  // Update the icon based on the type
-  if (type === "password") {
-    button.innerHTML = `
+            // Update the icon based on the type
+            if (type === "password") {
+                button.innerHTML = `
     <svg id="toggleIcon-${inputId}" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
       <circle cx="12" cy="12" r="3"></circle>
     </svg>`;
-  } else {
-    button.innerHTML = `
+            } else {
+                button.innerHTML = `
     <svg id="toggleIcon-${inputId}" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M17.94 17.94L6.06 6.06"></path>
       <path d="M1 1l22 22"></path>
     </svg>`;
-  }
-}
+            }
+        }
 
-function togglePassword(inputId) {
-  const input = document.getElementById(inputId);
-  const button = input.nextElementSibling;
-  const type = input.getAttribute("type") === "password" ? "text" : "password";
-  input.setAttribute("type", type);
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const button = input.nextElementSibling;
+            const type = input.getAttribute("type") === "password" ? "text" : "password";
+            input.setAttribute("type", type);
 
-  // Update the icon based on the type
-  if (type === "password") {
-    button.innerHTML = `
+            // Update the icon based on the type
+            if (type === "password") {
+                button.innerHTML = `
     <svg id="toggleIcon-${inputId}" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
       <circle cx="12" cy="12" r="3"></circle>
     </svg>`;
-  } else {
-    button.innerHTML = `
+            } else {
+                button.innerHTML = `
     <svg id="toggleIcon-${inputId}" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M17.94 17.94L6.06 6.06"></path>
       <path d="M1 1l22 22"></path>
     </svg>`;
-  }
-}
+            }
+        }
 
-// Mobile Menu Toggle
-const menuToggle = document.getElementById("menu-toggle");
-const mobileMenu = document.getElementById("mobile-menu");
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
 
-menuToggle.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
-  if (mobileMenu.classList.contains("hidden")) {
-    menuToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+            if (mobileMenu.classList.contains("hidden")) {
+                menuToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
   </svg>`;
-  } else {
-    menuToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            } else {
+                menuToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
   </svg>`;
-  }
-});
+            }
+        });
 
-// Theme Toggle for Desktop & Mobile
-const themeToggle = document.getElementById("theme-toggle");
-const themeText = document.getElementById("theme-text");
-const themeToggleMobile = document.getElementById("theme-toggle-mobile");
-const themeTextMobile = document.getElementById("theme-text-mobile");
+        // Theme Toggle for Desktop & Mobile
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeText = document.getElementById("theme-text");
+        const themeToggleMobile = document.getElementById("theme-toggle-mobile");
+        const themeTextMobile = document.getElementById("theme-text-mobile");
 
-function setTheme(isDark) {
-  if (isDark) {
-    document.documentElement.classList.add("dark");
-    themeText.innerText = "Dark Mode";
-    themeTextMobile.innerText = "Dark Mode";
-  } else {
-    document.documentElement.classList.remove("dark");
-    themeText.innerText = "Light Mode";
-    themeTextMobile.innerText = "Light Mode";
-  }
-}
+        function setTheme(isDark) {
+            if (isDark) {
+                document.documentElement.classList.add("dark");
+                themeText.innerText = "Dark Mode";
+                themeTextMobile.innerText = "Dark Mode";
+            } else {
+                document.documentElement.classList.remove("dark");
+                themeText.innerText = "Light Mode";
+                themeTextMobile.innerText = "Light Mode";
+            }
+        }
 
-themeToggle.addEventListener("click", () => {
-  setTheme(!document.documentElement.classList.contains("dark"));
-});
-themeToggleMobile.addEventListener("click", () => {
-  setTheme(!document.documentElement.classList.contains("dark"));
-});
+        themeToggle.addEventListener("click", () => {
+            setTheme(!document.documentElement.classList.contains("dark"));
+        });
+        themeToggleMobile.addEventListener("click", () => {
+            setTheme(!document.documentElement.classList.contains("dark"));
+        });
 
-// Intersection Observer for triggering animations on scroll
-document.addEventListener("DOMContentLoaded", function () {
-  const observerOptions = {
-    root: null,
-    threshold: 0.1,
-  };
-  const observerCallback = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-  document.querySelectorAll(".section-animate, .text-animate").forEach((el) => {
-    observer.observe(el);
-  });
-});
+        // Intersection Observer for triggering animations on scroll
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                threshold: 0.1,
+            };
+            const observerCallback = (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("in-view");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            document.querySelectorAll(".section-animate, .text-animate").forEach((el) => {
+                observer.observe(el);
+            });
+        });
 
-// Sign In Modal Functionality
-const signinModal = document.getElementById("signin-modal");
-const openSigninButtons = document.querySelectorAll(".open-signin-modal");
-const closeSigninButton = document.getElementById("close-signin-modal");
+        // Sign In Modal Functionality
+        const signinModal = document.getElementById("signin-modal");
+        const openSigninButtons = document.querySelectorAll(".open-signin-modal");
+        const closeSigninButton = document.getElementById("close-signin-modal");
 
-openSigninButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    signinModal.classList.remove("hidden");
-    // Close mobile menu if open
-    mobileMenu.classList.add("hidden");
-    // Update hamburger icon to hamburger
-    menuToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        openSigninButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                signinModal.classList.remove("hidden");
+                // Close mobile menu if open
+                mobileMenu.classList.add("hidden");
+                // Update hamburger icon to hamburger
+                menuToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
   </svg>`;
-    // Disable background scroll when modal is open
-    document.body.classList.add("overflow-hidden");
-  });
-});
+                // Disable background scroll when modal is open
+                document.body.classList.add("overflow-hidden");
+            });
+        });
 
-closeSigninButton.addEventListener("click", () => {
-  signinModal.classList.add("hidden");
-  document.body.classList.remove("overflow-hidden");
-});
+        closeSigninButton.addEventListener("click", () => {
+            signinModal.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+        });
 
-// Sign Up Modal Functionality
-const signupModal = document.getElementById("signup-modal");
-const openSignupButtons = document.querySelectorAll(".open-signup-modal");
-const closeSignupButton = document.getElementById("close-signup-modal");
+        // Sign Up Modal Functionality
+        const signupModal = document.getElementById("signup-modal");
+        const openSignupButtons = document.querySelectorAll(".open-signup-modal");
+        const closeSignupButton = document.getElementById("close-signup-modal");
 
-openSignupButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    signupModal.classList.remove("hidden");
-    mobileMenu.classList.add("hidden");
-    menuToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        openSignupButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                signupModal.classList.remove("hidden");
+                mobileMenu.classList.add("hidden");
+                menuToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
   </svg>`;
-    document.body.classList.add("overflow-hidden");
-  });
-});
+                document.body.classList.add("overflow-hidden");
+            });
+        });
 
-closeSignupButton.addEventListener("click", () => {
-  signupModal.classList.add("hidden");
-  document.body.classList.remove("overflow-hidden");
-});
+        closeSignupButton.addEventListener("click", () => {
+            signupModal.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+        });
 
-// -------------------------------
-// Password Strength and Matching Logic for Sign Up Modal
-// -------------------------------
-const signupPasswordInput = document.getElementById("password");
-const signupConfirmPasswordInput = document.getElementById(
-  "confirmPassword"
-);
-const strengthMeter = document.querySelector(".strength-meter");
-const requirementItems = document.querySelectorAll(".requirement-item");
-const matchMessage = document.querySelector(".match-message");
+        // -------------------------------
+        // Password Strength and Matching Logic for Sign Up Modal
+        // -------------------------------
+        const signupPasswordInput = document.getElementById("password");
+        const signupConfirmPasswordInput = document.getElementById(
+            "confirmPassword"
+        );
+        const strengthMeter = document.querySelector(".strength-meter");
+        const requirementItems = document.querySelectorAll(".requirement-item");
+        const matchMessage = document.querySelector(".match-message");
 
-const passwordRequirements = {
-  length: { regex: /.{8,}/, index: 0 },
-  uppercase: { regex: /[A-Z]/, index: 1 },
-  lowercase: { regex: /[a-z]/, index: 2 },
-  number: { regex: /[0-9]/, index: 3 },
-  special: { regex: /[^A-Za-z0-9]/, index: 4 },
-};
+        const passwordRequirements = {
+            length: { regex: /.{8,}/, index: 0 },
+            uppercase: { regex: /[A-Z]/, index: 1 },
+            lowercase: { regex: /[a-z]/, index: 2 },
+            number: { regex: /[0-9]/, index: 3 },
+            special: { regex: /[^A-Za-z0-9]/, index: 4 },
+        };
 
-function togglePassword(inputId) {
-  const input = document.getElementById(inputId);
-  const button = input.nextElementSibling;
-  const type = input.getAttribute("type") === "password" ? "text" : "password";
-  input.setAttribute("type", type);
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const button = input.nextElementSibling;
+            const type = input.getAttribute("type") === "password" ? "text" : "password";
+            input.setAttribute("type", type);
 
-  if (type === "password") {
-    button.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            if (type === "password") {
+                button.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
       <circle cx="12" cy="12" r="3"></circle>
   </svg>`;
-  } else {
-    button.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            } else {
+                button.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0="1-4.24-4.24"></path>
       <line x1="1" y1="1" x2="23" y2="23"></line>
   </svg>`;
-  }
-}
+            }
+        }
 
-function updatePasswordStrength(password) {
-  let strength = 0;
-  Object.keys(passwordRequirements).forEach((req) => {
-    const isValid = passwordRequirements[req].regex.test(password);
-    const item = requirementItems[passwordRequirements[req].index];
-    if (isValid) {
-      strength++;
-      item.classList.add("text-green-600");
-      item.classList.remove("text-red-600");
-    } else {
-      item.classList.add("text-red-600");
-      item.classList.remove("text-green-600");
-    }
-  });
-  strengthMeter.className = "strength-meter bg-gray-300 h-1 rounded";
-  if (strength > 3) {
-    strengthMeter.classList.add("bg-green-500");
-  } else if (strength > 2) {
-    strengthMeter.classList.add("bg-yellow-500");
-  } else if (strength > 0) {
-    strengthMeter.classList.add("bg-red-500");
-  }
-}
+        function updatePasswordStrength(password) {
+            let strength = 0;
+            Object.keys(passwordRequirements).forEach((req) => {
+                const isValid = passwordRequirements[req].regex.test(password);
+                const item = requirementItems[passwordRequirements[req].index];
+                if (isValid) {
+                    strength++;
+                    item.classList.add("text-green-600");
+                    item.classList.remove("text-red-600");
+                } else {
+                    item.classList.add("text-red-600");
+                    item.classList.remove("text-green-600");
+                }
+            });
+            strengthMeter.className = "strength-meter bg-gray-300 h-1 rounded";
+            if (strength > 3) {
+                strengthMeter.classList.add("bg-green-500");
+            } else if (strength > 2) {
+                strengthMeter.classList.add("bg-yellow-500");
+            } else if (strength > 0) {
+                strengthMeter.classList.add("bg-red-500");
+            }
+        }
 
-function checkPasswordMatch() {
-  const password = signupPasswordInput.value;
-  const confirmPassword = signupConfirmPasswordInput.value;
-  if (confirmPassword) {
-    if (password === confirmPassword) {
-      matchMessage.textContent = "Passwords match";
-      matchMessage.classList.add("text-green-600");
-      matchMessage.classList.remove("text-red-600");
-      signupConfirmPasswordInput.classList.remove("border-red-500");
-      signupConfirmPasswordInput.classList.add("border-green-500");
-    } else {
-      matchMessage.textContent = "Passwords do not match";
-      matchMessage.classList.add("text-red-600");
-      matchMessage.classList.remove("text-green-600");
-      signupConfirmPasswordInput.classList.add("border-red-500");
-      signupConfirmPasswordInput.classList.remove("border-green-500");
-    }
-  } else {
-    matchMessage.textContent = "";
-  }
-}
+        function checkPasswordMatch() {
+            const password = signupPasswordInput.value;
+            const confirmPassword = signupConfirmPasswordInput.value;
+            if (confirmPassword) {
+                if (password === confirmPassword) {
+                    matchMessage.textContent = "Passwords match";
+                    matchMessage.classList.add("text-green-600");
+                    matchMessage.classList.remove("text-red-600");
+                    signupConfirmPasswordInput.classList.remove("border-red-500");
+                    signupConfirmPasswordInput.classList.add("border-green-500");
+                } else {
+                    matchMessage.textContent = "Passwords do not match";
+                    matchMessage.classList.add("text-red-600");
+                    matchMessage.classList.remove("text-green-600");
+                    signupConfirmPasswordInput.classList.add("border-red-500");
+                    signupConfirmPasswordInput.classList.remove("border-green-500");
+                }
+            } else {
+                matchMessage.textContent = "";
+            }
+        }
 
-signupPasswordInput.addEventListener("input", () => {
-  // Show meter and requirements when user starts typing
-  if (signupPasswordInput.value.trim() === "") {
-    document.getElementById("strength-container").classList.add("hidden");
-    document.getElementById("requirements-container").classList.add("hidden");
-  } else {
-    document.getElementById("strength-container").classList.remove("hidden");
-    document
-      .getElementById("requirements-container")
-      .classList.remove("hidden");
-  }
-  updatePasswordStrength(signupPasswordInput.value);
-  checkPasswordMatch();
-});
-
-signupConfirmPasswordInput.addEventListener("input", checkPasswordMatch);
-
-
-//reg
-document.getElementById("signup-form").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Prevent page reload
-
-    // Collect form data
-    const formData = new FormData(this);
-
-    const data = {
-        name: formData.get("name"),  // Ensure your form has an input with name="name"
-        email: formData.get("email"),
-        reg_no: formData.get("reg_no"),
-        password: formData.get("password"),
-       // confirm_password: formData.get("confirm_password"),
-    };
-
-    console.log("Collected Data:", data); // ✅ Debugging: Log collected form data
-
-    // Ensure no fields are missing
-    if (!data.name || !data.email || !data.reg_no || !data.password ) {
-        alert("Please fill all fields!");
-        return;
-    }
-
-    // Password confirmation check
-    if (data.password !== data.confirm_password) {
-        alert("Passwords do not match!");
-        return;
-    }
-
-    try {
-        // Send data to backend
-        const response = await fetch("http://localhost:5000/registration", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                name: data.name,
-                email: data.email,
-                reg_no: data.reg_no,
-                password: data.password, // ✅ Only sending required fields
-            }),
+        signupPasswordInput.addEventListener("input", () => {
+            // Show meter and requirements when user starts typing
+            if (signupPasswordInput.value.trim() === "") {
+                document.getElementById("strength-container").classList.add("hidden");
+                document.getElementById("requirements-container").classList.add("hidden");
+            } else {
+                document.getElementById("strength-container").classList.remove("hidden");
+                document
+                    .getElementById("requirements-container")
+                    .classList.remove("hidden");
+            }
+            updatePasswordStrength(signupPasswordInput.value);
+            checkPasswordMatch();
         });
 
-        const result = await response.json();
+        signupConfirmPasswordInput.addEventListener("input", checkPasswordMatch);
 
-        console.log("Server Response:", result); // ✅ Debugging: Log server response
 
-        if (response.ok) {
-            alert("Registration successful!");
-            window.location.href = "test.html"; // Redirect to test page
-        } else {
-            alert(`Error: ${result.message}`);
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        alert("Something went wrong. Please try again.");
-    }
-});
+        //reg
+        document.getElementById("signup-form").addEventListener("submit", async function (event) {
+            event.preventDefault(); // Prevent page reload
 
-//login
+            // Collect form data
+            const formData = new FormData(this);
 
-document.getElementById("login-form").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Prevent page reload
+            const data = {
+                name: formData.get("name"),  // Ensure your form has an input with name="name"
+                email: formData.get("email"),
+                reg_no: formData.get("reg_no"),
+                password: formData.get("password"),
+                // confirm_password: formData.get("confirm_password"),
+            };
 
-    // Collect form data
-    const formData = new FormData(this);
+            console.log("Collected Data:", data); // ✅ Debugging: Log collected form data
 
-    const data = {
-        email: formData.get("email"),
-        password: formData.get("password"),
-    };
+            // Ensure no fields are missing
+            if (!data.name || !data.email || !data.reg_no || !data.password) {
+                alert("Please fill all fields!");
+                return;
+            }
 
-    console.log("Collected Data:", data); // ✅ Debugging: Log collected form data
+            // Password confirmation check
+            if (data.password !== data.confirm_password) {
+                alert("Passwords do not match!");
+                return;
+            }
 
-    // Ensure no fields are missing
-    if (!data.email || !data.password) {
-        alert("Please fill in both email and password!");
-        return;
-    }
+            try {
+                // Send data to backend
+                const response = await fetch("http://localhost:5000/registration", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        name: data.name,
+                        email: data.email,
+                        reg_no: data.reg_no,
+                        password: data.password, // ✅ Only sending required fields
+                    }),
+                });
 
-    try {
-        // Send data to backend
-        const response = await fetch("http://localhost:5000/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
+                const result = await response.json();
+
+                console.log("Server Response:", result); // ✅ Debugging: Log server response
+
+                if (response.ok) {
+                    alert("Registration successful!");
+                    window.location.href = "test.html"; // Redirect to test page
+                } else {
+                    alert(`Error: ${result.message}`);
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Something went wrong. Please try again.");
+            }
         });
 
-        const result = await response.json();
+        //login
 
-        console.log("Server Response:", result); // ✅ Debugging: Log server response
+        document.getElementById("login-form").addEventListener("submit", async function (event) {
+            event.preventDefault(); // Prevent page reload
 
-        if (response.ok) {
-            alert("Login successful!");
-            window.location.href = "dashboard.html"; // Redirect to dashboard
-        } else {
-            alert(`Error: ${result.message}`);
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        alert("Something went wrong. Please try again.");
-    }
-});
+            // Collect form data
+            const formData = new FormData(this);
+
+            const data = {
+                email: formData.get("email"),
+                password: formData.get("password"),
+            };
+
+            console.log("Collected Data:", data); // ✅ Debugging: Log collected form data
+
+            // Ensure no fields are missing
+            if (!data.email || !data.password) {
+                alert("Please fill in both email and password!");
+                return;
+            }
+
+            try {
+                // Send data to backend
+                const response = await fetch("http://localhost:5000/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                console.log("Server Response:", result); // ✅ Debugging: Log server response
+
+                if (response.ok) {
+                    alert("Login successful!");
+                    window.location.href = "dashboard.html"; // Redirect to dashboard
+                } else {
+                    alert(`Error: ${result.message}`);
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Something went wrong. Please try again.");
+            }
+        });
 
 
-</script>
+    </script>
 </body>
 
 </html>

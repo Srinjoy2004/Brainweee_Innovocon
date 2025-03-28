@@ -13,3 +13,6 @@ html {
   transform: translateY(0);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
+.hidden {
+  display: none;
+}
